@@ -1,3 +1,4 @@
 [submodule "3rd_party/hypre"]
 	path = 3rd_party/hypre
 	url = https://github.com/hypre-space/hypre.git
+	branch = version
