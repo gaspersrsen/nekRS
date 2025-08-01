@@ -22,7 +22,8 @@ ExternalProject_Add(
 
 add_library(nekrs-hypre SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/solvers/elliptic/amgSolver/hypre/hypreWrapper.cpp)
 add_dependencies(nekrs-hypre HYPRE_BUILD)
-target_include_directories(nekrs-hypre PRIVATE ${HYPRE_INSTALL_DIR}/include)
+# target_include_directories(nekrs-hypre PRIVATE ${HYPRE_INSTALL_DIR}/include)
+target_include_directories(nekrs-hypre PRIVATE ${HYPRE_SOURCE_DIR}/src/hypre/include)
 # lacking of a better alternative adding dependencies manually 
 target_link_libraries(nekrs-hypre PUBLIC MPI::MPI_C 
                                   PRIVATE ${HYPRE_INSTALL_DIR}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}HYPRE.a)
